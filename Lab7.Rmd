@@ -10,3 +10,22 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 Hi Sandy!
+
+Are you going to Scarborough Fair? Parsely, sage, rosemary and thymeeeeee
+
+```{r}
+# Load required packages
+library(tidyverse)
+
+# Read data set
+kermit <- read_csv("kermit.csv")
+
+# Was there a significant difference in kermit perception pre and post talk
+# Make kermit histogram
+kermit_hist <- ggplot(kermit, aes(x = Score.pre))+
+  geom_histogram()+
+  facet_wrap(~ Gender)
+
+kermit_hist
+```
+
