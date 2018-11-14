@@ -39,7 +39,7 @@ Levels are in column called gender
 
 Unpaired data: Mann-Whitney U
 (same code as Wilcox.test function -> would use wilcox if data is paired)
-Because respondents but not necessarily data from the same person in each column
+Male vs Female is not paired; ranks are paired
 Data frame that using should be most recent -> use data = . since the function was developed prior to piping 
 ```{r}
 
@@ -50,5 +50,22 @@ Data frame that using should be most recent -> use data = . since the function w
 mwu_kermit <- kermit %>%
   wilcox.test(Score.pre ~ Gender, data = .)
 mwu_kermit
+```
+
+Is there a significant difference in Kermit ranks for pre-talk and post-talk scores (ignoring all other varibles)?
+
+Perform two-tailed test
+
+
+H0: There is no significant difference in Kermit ranks for pre and post talk scores
+HA: There is significant difference in Kermit ranks for pre and post talk scores
+
+```{r}
+# Use wilcox test because this is PAIRED -> since it is pre and post rank it is paired
+
+wsr_kermit <- wilcox.test(kermit$Score.pre, kermit$Score.post, paired = TRUE)
+wsr_kermit
+
+# Retain the null. There is no significant difference in kermit rankings before and after his talk (include statistical summary)
 ```
 
