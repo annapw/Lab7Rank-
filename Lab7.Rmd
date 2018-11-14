@@ -30,6 +30,17 @@ kermit_hist
 ```
 
 Creator: Rank-based tests. 
+
+Perform Ranked-Based Tests on Kermit DataFrame
+
+Is there a significant difference in pre-talk kermit scores for males and females? 
+
+Levels are in column called gender
+
+Unpaired data: Mann-Whitney U
+(same code as Wilcox.test function -> would use wilcox if data is paired)
+Because respondents but not necessarily data from the same person in each column
+Data frame that using should be most recent -> use data = . since the function was developed prior to piping 
 ```{r}
 
 #Is there a significant difference in pre-talk Kermit scores for males and females?
